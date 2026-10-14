@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>مبادرة التصميم الديني المجاني | حسين حيدر</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <style>
+        :root {
+            --bg-main: #09090b;
+            --bg-surface: #121214;
+            --bg-elevated: #18181b;
+            --bg-pill: #1f1f23;
+            --border-subtle: #27272a;
+            --border-focus: #52525b;
+            --text-primary: #ffffff;
+            --text-secondary: #a1a1aa;
+            --text-muted: #71717a;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+        body {
+            font-family: 'IBM Plex Sans Arabic', sans-serif;
+            background-color: var(--bg-main); color: var(--text-primary);
+            line-height: 1.7; padding: 24px 16px 32px; min-height: 100vh;
+            display: flex; justify-content: center;
+        }
+        .wrapper { width: 100%; max-width: 460px; display: flex; flex-direction: column; gap: 14px; }
+        .header { padding: 4px 4px 8px; }
+        .status-tag {
+            display: inline-flex; align-items: center; gap: 8px; font-size: .78rem;
+            font-weight: 600; color: var(--text-primary); background: var(--bg-surface);
+            border: 1px solid var(--border-subtle); padding: 5px 12px;
+            border-radius: 999px; margin-bottom: 14px;
+        }
+        .status-dot { width: 6px; height: 6px; background: var(--text-primary); border-radius: 50%; }
+        .title { font-size: 1.45rem; font-weight: 700; letter-spacing: -.2px; margin-bottom: 8px; }
+        .subtitle { font-size: .94rem; color: var(--text-secondary); }
+        .card { background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: 16px; padding: 20px; }
+        .initiative-card { border-right: 3px solid var(--text-primary); }
+        .card-label { font-size: .76rem; font-weight: 600; color: var(--text-muted); margin-bottom: 6px; display: block; }
+        .card-title { font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; }
+        .card-text { font-size: .92rem; color: var(--text-secondary); margin-bottom: 16px; }
+        .details-box {
+            background: var(--bg-elevated); border: 1px solid var(--border-subtle);
+            border-radius: 12px; padding: 14px; margin-bottom: 18px;
+            display: flex; flex-direction: column; gap: 12px;
+        }
+        .detail-item { display: flex; align-items: flex-start; gap: 10px; font-size: .88rem; color: var(--text-secondary); }
+        .detail-bullet { color: var(--text-primary); font-weight: 700; flex-shrink: 0; }
+        .detail-item strong { color: var(--text-primary); font-weight: 600; }
+        .btn {
+            display: flex; align-items: center; justify-content: space-between; width: 100%;
+            padding: 13px 18px; border-radius: 12px; font-family: inherit; font-size: .92rem;
+            font-weight: 600; cursor: pointer; border: none; transition: all .15s ease;
+        }
+        .btn:active { transform: scale(.99); }
+        .btn-primary { background: var(--text-primary); color: var(--bg-main); }
+        .btn-primary:hover { opacity: .9; }
+        .btn-secondary { background: var(--bg-pill); color: var(--text-primary); border: 1px solid var(--border-subtle); }
+        .btn-secondary:hover { border-color: var(--border-focus); }
+        .arrow { font-size: 1rem; transition: transform .2s ease; }
+        .btn:hover .arrow { transform: translateX(-4px); }
+        .pills-container { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+        .pill {
+            background: var(--bg-pill); border: 1px solid var(--border-subtle); color: var(--text-secondary);
+            padding: 6px 12px; border-radius: 8px; font-family: inherit; font-size: .82rem;
+            font-weight: 500; cursor: pointer; transition: all .15s ease; user-select: none;
+        }
+        .pill.active { background: var(--text-primary); color: var(--bg-main); border-color: var(--text-primary); font-weight: 600; }
+        .info-desc-box {
+            margin-top: 12px; padding: 12px 14px; background: var(--bg-elevated);
+            border-radius: 10px; border: 1px solid var(--border-subtle); font-size: .88rem;
+            color: var(--text-secondary); min-height: 68px; display: flex; align-items: center;
+        }
+        .footer {
+            margin-top: 6px; padding: 16px 4px 0; display: flex; align-items: center;
+            justify-content: space-between; border-top: 1px solid var(--border-subtle);
+            font-size: .82rem; color: var(--text-muted);
+        }
+        .developer-name { color: var(--text-primary); font-weight: 600; }
+    </style>
+</head>
+<body>
+    <main class="wrapper">
+        <header class="header">
+            <div class="status-tag"><span class="status-dot"></span><span>مبادرة مجانية • حسين حيدر</span></div>
+            <h1 class="title">أفكار دينية تتحول إلى مواقع وتطبيقات</h1>
+            <p class="subtitle">عندك فكرة دينية تفيد الناس؟ أساعدك في تحويلها إلى موقع أو تطبيق بدون تكلفة.</p>
+        </header>
+
+        <section class="card initiative-card">
+            <span class="card-label">عن المبادرة</span>
+            <h2 class="card-title">فكرتك الدينية بدون تكلفة</h2>
+            <p class="card-text">إذا عندك فكرة لخدمة الدين، شاركني بيها، ونعمل على تحويلها إلى موقع أو تطبيق واضح وسهل الاستخدام، بدون مقابل.</p>
+            <div class="details-box">
+                <div class="detail-item"><span class="detail-bullet">•</span><span><strong>الأفكار المقبولة:</strong> القرآن الكريم، الأدعية، الأذكار، الزيارات، الختمات القرآنية، والفتاوى والمحتوى الديني النافع.</span></div>
+                <div class="detail-item"><span class="detail-bullet">•</span><span><strong>سهل الاستخدام:</strong> تصميم واضح ومرتب يناسب الجميع.</span></div>
+                <div class="detail-item"><span class="detail-bullet">•</span><span><strong>بدون تكلفة:</strong> المبادرة مجانية بهدف نشر الفائدة وخدمة الناس.</span></div>
+            </div>
+            <button class="btn btn-primary" onclick="openDirectChannel()"><span>أرسل فكرتك الآن</span><span class="arrow">←</span></button>
+        </section>
+
+        <section class="card">
+            <span class="card-label">أسئلة سريعة (اضغط لعرض الإجابة)</span>
+            <div class="pills-container" id="infoPills"></div>
+            <div class="info-desc-box" id="infoDescBox"></div>
+        </section>
+
+        <section class="card">
+            <span class="card-label">القناة الرسمية</span>
+            <h2 class="card-title">قناة دعم المشاريع الصغيرة</h2>
+            <p class="card-text">تابع القناة للاطلاع على الأعمال ومبادرات دعم أصحاب المشاريع الصغيرة.</p>
+            <button class="btn btn-secondary" onclick="openDirectChannel()"><span>فتح القناة على تيليجرام</span><span class="arrow">←</span></button>
+        </section>
+
+        <button id="closeBtn" class="btn btn-secondary" style="display:none" onclick="closeMiniApp()"><span>العودة إلى المحادثة</span><span class="arrow">←</span></button>
+
+        <footer class="footer"><span>مبادرة مجانية</span><span>بإشراف <strong class="developer-name">حسين حيدر</strong></span></footer>
+    </main>
+
+    <script>
+        const DIRECT_CHANNEL_URL = "https://t.me/rs0hmn?direct";
+        const FAQ_LIST = [
+            { title: "ما المطلوب مني؟", desc: "اشرح فكرتك ببساطة، وأرسل أي محتوى تريد إضافته." },
+            { title: "هل أحتاج خبرة؟", desc: "لا، فقط شاركني فكرتك وسنتفق على تفاصيلها." },
+            { title: "ما الشروط؟", desc: "أن تكون الفكرة دينية وهادفة ومخصصة لخدمة الناس." },
+            { title: "كيف أتواصل معك؟", desc: "اضغط على زر إرسال الفكرة أو افتح محادثة تيليجرام من خلال القناة." }
+        ];
+        const pillsContainer = document.getElementById("infoPills");
+        const descBox = document.getElementById("infoDescBox");
+        const tg = window.Telegram && window.Telegram.WebApp ? window.Telegram.WebApp : null;
+
+        FAQ_LIST.forEach((item, index) => {
+            const btn = document.createElement("button");
+            btn.className = "pill" + (index === 0 ? " active" : "");
+            btn.textContent = item.title;
+            if (index === 0) descBox.textContent = item.desc;
+            btn.addEventListener("click", () => {
+                document.querySelectorAll(".pill").forEach(el => el.classList.remove("active"));
+                btn.classList.add("active");
+                descBox.textContent = item.desc;
+                if (tg && tg.HapticFeedback) tg.HapticFeedback.selectionChanged();
+            });
+            pillsContainer.appendChild(btn);
+        });
+
+        if (tg) {
+            tg.ready();
+            tg.expand();
+            if (typeof tg.setHeaderColor === "function") tg.setHeaderColor("#09090b");
+            if (typeof tg.setBackgroundColor === "function") tg.setBackgroundColor("#09090b");
+            if (tg.initDataUnsafe && Object.keys(tg.initDataUnsafe).length > 0) {
+                document.getElementById("closeBtn").style.display = "flex";
+            }
+        }
+
+        function openDirectChannel() {
+            if (tg && typeof tg.openTelegramLink === "function") tg.openTelegramLink(DIRECT_CHANNEL_URL);
+            else window.open(DIRECT_CHANNEL_URL, "_blank", "noopener,noreferrer");
+        }
+        function closeMiniApp() {
+            if (tg && typeof tg.close === "function") tg.close();
+        }
+    </script>
+</body>
+</html>
