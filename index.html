@@ -87,48 +87,51 @@
     <main class="wrapper">
         <header class="header">
             <div class="status-tag"><span class="status-dot"></span><span>مبادرة مجانية • حسين حيدر</span></div>
-            <h1 class="title">أفكار دينية تتحول إلى مواقع وتطبيقات</h1>
-            <p class="subtitle">عندك فكرة دينية تفيد الناس؟ أساعدك في تحويلها إلى موقع أو تطبيق بدون تكلفة.</p>
+            <h1 class="title">عندك فكرة دينية؟ خلينا نحولها لموقع أو تطبيق</h1>
+            <p class="subtitle">إذا ببالك فكرة دينية تفيد الناس وتترك أثر، أني أساعدك وأصممها إلك كموقع أو تطبيق مرتب وببلاش.</p>
         </header>
 
         <section class="card initiative-card">
-            <span class="card-label">عن المبادرة</span>
-            <h2 class="card-title">فكرتك الدينية بدون تكلفة</h2>
-            <p class="card-text">إذا عندك فكرة لخدمة الدين، شاركني بيها، ونعمل على تحويلها إلى موقع أو تطبيق واضح وسهل الاستخدام، بدون مقابل.</p>
+            <span class="card-label">شنو هاي المبادرة؟</span>
+            <h2 class="card-title">فكرتك علينا، والأجر للجميع</h2>
+            <p class="card-text">هواي مرات تجي ببالنا أفكار حلوة تخدم الدين والناس، بس نحتار شلون ننفذها. كل اللي عليك تشاركني فكرتك، وأني أتكفل بتحويلها لموقع أو تطبيق واضح وسهل، وبدون أي مقابل.</p>
             <div class="details-box">
-                <div class="detail-item"><span class="detail-bullet">•</span><span><strong>الأفكار المقبولة:</strong> القرآن الكريم، الأدعية، الأذكار، الزيارات، الختمات القرآنية، والفتاوى والمحتوى الديني النافع.</span></div>
-                <div class="detail-item"><span class="detail-bullet">•</span><span><strong>سهل الاستخدام:</strong> تصميم واضح ومرتب يناسب الجميع.</span></div>
-                <div class="detail-item"><span class="detail-bullet">•</span><span><strong>بدون تكلفة:</strong> المبادرة مجانية بهدف نشر الفائدة وخدمة الناس.</span></div>
+                <div class="detail-item"><span class="detail-bullet">•</span><span><strong>شنو الأفكار اللي أستقبلها؟</strong> كل شي يخص القرآن الكريم، الأدعية، الأذكار، الزيارات، الختمات، الفتاوى، وأي محتوى ديني يفيد الناس.</span></div>
+                <div class="detail-item"><span class="detail-bullet">•</span><span><strong>شغل مرتب وبسيط:</strong> أصمملك شي واضح وسهل حتى الكل يكدر يستخدمه بدون تعقيد.</span></div>
+                <div class="detail-item"><span class="detail-bullet">•</span><span><strong>مجاني بالكامل:</strong> هاي المبادرة لوجه الله وهدفها نشر الفائدة وخدمة الناس، يعني ما راح تدفع أي شي.</span></div>
             </div>
-            <button class="btn btn-primary" onclick="openDirectChannel()"><span>أرسل فكرتك الآن</span><span class="arrow">←</span></button>
+            <button class="btn btn-primary" onclick="openDirectMessages()"><span>دزلي فكرتك هسة</span><span class="arrow">←</span></button>
         </section>
 
         <section class="card">
-            <span class="card-label">أسئلة سريعة (اضغط لعرض الإجابة)</span>
+            <span class="card-label">أسئلة ممكن تخطر ببالك (اضغط على السؤال)</span>
             <div class="pills-container" id="infoPills"></div>
             <div class="info-desc-box" id="infoDescBox"></div>
         </section>
 
         <section class="card">
-            <span class="card-label">القناة الرسمية</span>
+            <span class="card-label">قناتي على تيليجرام</span>
             <h2 class="card-title">قناة دعم المشاريع الصغيرة</h2>
-            <p class="card-text">تابع القناة للاطلاع على الأعمال ومبادرات دعم أصحاب المشاريع الصغيرة.</p>
-            <button class="btn btn-secondary" onclick="openDirectChannel()"><span>فتح القناة على تيليجرام</span><span class="arrow">←</span></button>
+            <p class="card-text">انضم للقناة حتى تشوف الأعمال اللي أشتغل عليها، وتتابع مبادرات دعم أصحاب المشاريع الصغيرة.</p>
+            <button class="btn btn-secondary" onclick="openChannel()"><span>فتح القناة على تيليجرام</span><span class="arrow">←</span></button>
         </section>
 
-        <button id="closeBtn" class="btn btn-secondary" style="display:none" onclick="closeMiniApp()"><span>العودة إلى المحادثة</span><span class="arrow">←</span></button>
+        <button id="closeBtn" class="btn btn-secondary" style="display:none" onclick="closeMiniApp()"><span>رجوع للمحادثة</span><span class="arrow">←</span></button>
 
-        <footer class="footer"><span>مبادرة مجانية</span><span>بإشراف <strong class="developer-name">حسين حيدر</strong></span></footer>
+        <footer class="footer"><span>مبادرة مجانية لوجه الله</span><span>بإشراف <strong class="developer-name">حسين حيدر</strong></span></footer>
     </main>
 
     <script>
-        const DIRECT_CHANNEL_URL = "https://t.me/rs0hmn?direct";
+        const DIRECT_MESSAGES_URL = "https://t.me/rs0hmn?direct";
+        const CHANNEL_URL = "https://t.me/rs0hmn";
+
         const FAQ_LIST = [
-            { title: "ما المطلوب مني؟", desc: "اشرح فكرتك ببساطة، وأرسل أي محتوى تريد إضافته." },
-            { title: "هل أحتاج خبرة؟", desc: "لا، فقط شاركني فكرتك وسنتفق على تفاصيلها." },
-            { title: "ما الشروط؟", desc: "أن تكون الفكرة دينية وهادفة ومخصصة لخدمة الناس." },
-            { title: "كيف أتواصل معك؟", desc: "اضغط على زر إرسال الفكرة أو افتح محادثة تيليجرام من خلال القناة." }
+            { title: "شنو المطلوب مني؟", desc: "بس اشرحلي الفكرة اللي ببالك ببساطة، وإذا عندك نصوص أو محتوى جاهز تحب نضيفه دزه الي." },
+            { title: "لازم عندي خبرة؟", desc: "أبداً، لا تشيل هم. أنت بس عليك الفكرة وأني أرتب كل التفاصيل الباقية وياك." },
+            { title: "شنو الشروط؟", desc: "الشرط الوحيد إن الفكرة تكون دينية، هادفة، وبيها فائدة حقيقية للناس." },
+            { title: "شلون أتواصل وياك؟", desc: "اضغط على زر (دزلي فكرتك هسة) فوك، وراح تفتحلك محادثة مباشرة وياي." }
         ];
+
         const pillsContainer = document.getElementById("infoPills");
         const descBox = document.getElementById("infoDescBox");
         const tg = window.Telegram && window.Telegram.WebApp ? window.Telegram.WebApp : null;
@@ -157,10 +160,18 @@
             }
         }
 
-        function openDirectChannel() {
-            if (tg && typeof tg.openTelegramLink === "function") tg.openTelegramLink(DIRECT_CHANNEL_URL);
-            else window.open(DIRECT_CHANNEL_URL, "_blank", "noopener,noreferrer");
+        // فتح رسائل القناة لإرسال الفكرة
+        function openDirectMessages() {
+            if (tg && typeof tg.openTelegramLink === "function") tg.openTelegramLink(DIRECT_MESSAGES_URL);
+            else window.open(DIRECT_MESSAGES_URL, "_blank", "noopener,noreferrer");
         }
+
+        // فتح القناة نفسها
+        function openChannel() {
+            if (tg && typeof tg.openTelegramLink === "function") tg.openTelegramLink(CHANNEL_URL);
+            else window.open(CHANNEL_URL, "_blank", "noopener,noreferrer");
+        }
+
         function closeMiniApp() {
             if (tg && typeof tg.close === "function") tg.close();
         }
